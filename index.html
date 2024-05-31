@@ -3,80 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh Pick</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/994410224322609244/1244004025892999198/freshpick-removebg-preview.png?ex=66538888&is=66523708&hm=fe8f6d79a310882c1496afde370cde84f239850df5d522b8e253ac85faacd771&" type="image/png">
+    <title>{% block title %}FreshPick{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header class="header bg-white border-b border-gray-200 py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="logo text-2xl font-bold">FreshPick</div>
-            <nav class="nav">
-                <a href="#" class="mx-4 text-gray-700">Home</a>
-                <a href="#" class="mx-4 text-gray-700">Shop</a>
-                <a href="#" class="mx-4 text-gray-700">Products</a>
-                <a href="#" class="mx-4 text-gray-700">About Us</a>
-            </nav>
-            <div class="cta">
-                <a href="#" class="mx-2 text-blue-500">Login</a>
-                <a href="#" class="mx-2 text-blue-500">Signup</a>
-            </div>
+
+<!-- Header section -->
+<header class="bg-gray-100 shadow-lg h-full sticky top-0 z-[99]">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <div>
+            <a href="/" class="text-white text-2xl font-semibold inline-flex items-center">
+                <img src="https://github.com/khalilelamraoui/Fresh-pick/blob/main/freshpick.png?raw=true" alt="" class="" width="70" style="mix-blend-mode: multiply;">
+                <h1 class="text-[#7bb234] ">Fresh<span class="text-[#ffc241]">Pick</span></h1>
+            </a>
         </div>
+    <div class="inline-flex items-center gap-4">
+      
+    <!-- Profile button with dropdown menu -->
+    <div class="relative">
+    <button class="text-[#333333] font-semibold bg-transparent px-1 py-1 border-[1.5px] border-[#333333] hover:border-green-700 rounded-full hover:text-green-700 transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+        </button>
+        </div>
+        <!-- Cart button with index -->
+        <div class="relative">
+    <a href="{% url 'cart-items' %}">
+        <button id="cartButton" class="text-[#333333] font-semibold bg-transparent px-1 py-1 border-[1.5px] rounded-full border-[#333333] hover:border-green-700 hover:text-green-700 transition-all duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+    </button>
+</a>
+</div>
+</div>
     </header>
+    
+            
+<!-- Main content of the page -->
+<div class="bg-gradient-to-b from-green-50 to-green-50">
+    <section class="py-10 sm:py-16 lg:py-24">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+                <div class="relative">
+                    <h1 class="text-4xl font-bold mb-8 text-[#333333] sm:text-6xl lg:text-7xl">Project Overview</h1>
+                    <div class="relative inline-flex items-center">
+                        <span class="absolute inset-x-0 bottom-0 border-b-[30px] border-green-700/[.5]"></span>
+                        <h2 class="text-4xl font-bold text-black sm:text-6xl lg:text-7xl">Fresh Food</h2>
+                    </div>
+                    <p class="mt-8 text-base text-black sm:text-xl">Fresh Pick is a user-friendly web application designed to streamline your grocery shopping experience. Select and purchase fresh fruits and vegetables online, then pick them up at your convenience.</p>
+                </div>
+                        <img class="w-full rounded-lg" src="https://images.pexels.com/photos/7129126/pexels-photo-7129126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                    </div>
+            
+                    </div>
+                </div>
 
-    <!-- Main content of the page -->
-    <main class="max-w-4xl mx-auto p-4">
-        <section class="mb-6">
-            <h2 class="text-xl font-semibold mb-2">Project Overview</h2>
-            <p>Fresh Pick is a user-friendly web application designed to streamline your grocery shopping experience. Select and purchase fresh fruits and vegetables online, then pick them up at your convenience.</p>
-            <p><strong>Technology Stack:</strong></p>
-            <ul class="list-disc ml-5">
-                <li><strong>Django:</strong> for rapid development and pragmatic design.</li>
-                <li><strong>MySQL:</strong> for reliable data management.</li>
-                <li><strong>Tailwind CSS:</strong> for custom, responsive designs.</li>
-                <li><strong>HTML:</strong> for structuring and presenting content.</li>
-            </ul>
-        </section>
-        <section class="mb-6">
-            <h2 class="text-xl font-semibold mb-2">About the Developer</h2>
-            <p>Hi, we are three passionate software engineering students with a keen interest in web development. We created Fresh Pick to solve the problem of inconvenient grocery shopping and to learn more about full-stack development. Through this project, we enhanced our skills in Django, MySQL, and responsive design.</p>
-        </section>
-        <section>
-            <h2 class="text-xl font-semibold mb-2">Explore Fresh Pick</h2>
-            <ul class="list-disc ml-5">
-                <li><a href="https://fresh-pick.vercel.app/" class="text-blue-500 hover:underline">Explore the Fresh Pick App</a></li>
-                <li><a href="https://github.com/Clear08/fresh-pick" class="text-blue-500 hover:underline">View the GitHub Repository</a></li>
-            </ul>
-        </section>
-    </main>
+                <div class="bg-grey-50">
+                    <section class="py-10 sm:py-16 lg:py-24">
+                        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                            <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+                                <div>
+                                    <h2 class="text-4xl font-bold text-[#333333] sm:text-6xl lg:text-7xl">About the Developers</h2>
+                                    <p class="mt-4 text-base text-gray-600 sm:text-xl">Hi, we are three passionate software engineering students with a keen interest in web development. We created Fresh Pick to solve the problem of inconvenient grocery shopping and to learn more about full-stack development. Through this project, we enhanced our skills in Django, MySQL, and responsive design.</p>
+                                </div>
+                                <div class="relative bg-green-100 p-20 rounded-lg shadow-lg">
+                                    <div class="absolute top-0 left-0 bg-grey-100 border-t-2 border-l-2 border-grey-200 w-8 h-8 transform -translate-x-5 -translate-y-5 rotate-45"></div>
+                                    <div class="post-it-content">
+                                        <p><a href="https://yourwebsite.com" target="_blank" class="text-4xl text-gray-800 font-semibold hover:underline">Your Website</a></p>
+                                        <p><a href="https://github.com/yourusername" target="_blank" class="text-4xl text-gray-800 font-semibold hover:underline">GitHub</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+               
+                
+        </div>
+    </section>
+</div>
 
-    <footer class="footer bg-gray-100 py-8 mt-10 border-t border-gray-200">
-        <div class="container mx-auto flex justify-between">
-            <div class="footer-section">
-                <h4 class="font-semibold mb-4">Company</h4>
-                <a href="#" class="block mb-2 text-gray-600">About</a>
-                <a href="#" class="block mb-2 text-gray-600">Features</a>
-                <a href="#" class="block mb-2 text-gray-600">Works</a>
-                <a href="#" class="block mb-2 text-gray-600">Career</a>
+
+ 
+    <section class="py-10 bg-gray-50 sm:pt-16 lg:pt-24">
+        <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+            <div class="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
+                <div class="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
+                    <a href="/" class="text-white text-2xl font-semibold inline-flex items-center">
+                        <img src="https://github.com/khalilelamraoui/Fresh-pick/blob/main/freshpick.png?raw=true" alt="" style="mix-blend-mode: multiply;" width="70">
+                        <h1 class="text-[#7bb234] ">Fresh<span class="text-[#ffc241]">Pick</span></h1>
+                    </a>
+                    
+                    <p class="text-base leading-relaxed text-gray-600 mt-7">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+    
+                    <ul class="flex space-x-4 mt-9">
+                        <li><a href="#" class="text-[#333333] hover:text-green-700 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a></li>
+                        <li><a href="#" class="text-[#333333] hover:text-green-700 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a></li>
+                        <li><a href="#" class="text-[#333333] hover:text-green-700 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <p class="text-sm font-semibold tracking-widest text-gray-400 uppercase">Company</p>
+    
+                    <ul class="mt-6 space-y-4">
+                        <li>
+                            <a href="/about" title="" class="flex text-base text-black transition-all duration-200 hover:text-green-700 focus:text-green-700"> About </a>
+                        </li>
+    
+                        <li>
+                            <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-green-700 focus:text-green-700"> Features </a>
+                        </li>
+    
+                        <li>
+                            <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-green-700 focus:text-green-700"> Works </a>
+                        </li>
+    
+                        <li>
+                            <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-green-700 focus:text-green-700"> Career </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <p class="text-sm font-semibold tracking-widest text-gray-400 uppercase">Help</p>
+    
+                    <ul class="mt-6 space-y-4">
+                        <li>
+                            <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-green-700 focus:text-green-700"> Customer Support </a>
+                        </li>
+    
+                        <li>
+                            <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-green-700 focus:text-green-700"> Delivery Details </a>
+                        </li>
+    
+                        <li>
+                            <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-green-700 focus:text-green-700"> Terms & Conditions </a>
+                        </li>
+    
+                        <li>
+                            <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-green-700 focus:text-green-700"> Privacy Policy </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="col-span-2 md:col-span-1 lg:col-span-2 lg:pl-8">
+                    <p class="text-sm font-semibold tracking-widest text-gray-400 uppercase">Subscribe to newsletter</p>
+    
+                    <form action="#" method="POST" class="mt-6">
+                        <div>
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Enter your email" class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-green-700 caret-green-700" />
+                        </div>
+    
+                        <button type="submit" class="inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-white transition-all duration-200 bg-green-700 rounded-md hover:bg-green-700/[.8] focus:bg-green-700">Subscribe</button>
+                    </form>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4 class="font-semibold mb-4">Help</h4>
-                <a href="#" class="block mb-2 text-gray-600">Customer Support</a>
-                <a href="#" class="block mb-2 text-gray-600">Delivery Details</a>
-                <a href="#" class="block mb-2 text-gray-600">Terms & Conditions</a>
-                <a href="#" class="block mb-2 text-gray-600">Privacy Policy</a>
-            </div>
-            <div class="footer-section">
-                <h4 class="font-semibold mb-4">Subscribe to newsletter</h4>
-                <form class="flex">
-                    <input type="email" placeholder="Email" class="p-2 border border-gray-300 rounded-l">
-                    <button type="submit" class="p-2 bg-blue-500 text-white rounded-r">Subscribe</button>
-                </form>
-            </div>
+    
+            <hr class="mt-16 mb-10 border-gray-200" />
+    
+            <p class="text-sm text-center text-gray-600">© Copyright 2024, All Rights Reserved by FreshPick</p>
         </div>
-        <div class="footer-bottom text-center mt-6 text-gray-600">
-            © Copyright 2024, All Rights Reserved by FreshPick
-        </div>
-    </footer>
-</body>
-</html>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    </body>
+    </html>
+
