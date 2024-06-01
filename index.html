@@ -12,78 +12,200 @@
 
 <!-- Header section -->
 <header class="bg-gray-100 shadow-lg h-full sticky top-0 z-[99]">
-    <div class="container mx-auto flex justify-between items-center">
+    <div class="container mx-auto flex items-center justify-between p-4">
         <!-- Logo -->
-        <div>
+        <div class="flex items-center">
             <a href="/" class="text-white text-2xl font-semibold inline-flex items-center">
-                <img src="https://github.com/khalilelamraoui/Fresh-pick/blob/main/freshpick.png?raw=true" alt="" class="" width="70" style="mix-blend-mode: multiply;">
+                <img src="https://github.com/khalilelamraoui/Fresh-pick/blob/main/freshpick.png?raw=true" alt="" width="70" style="mix-blend-mode: multiply;">
                 <h1 class="text-[#7bb234] ">Fresh<span class="text-[#ffc241]">Pick</span></h1>
             </a>
         </div>
-    <div class="inline-flex items-center gap-4">
-      
-    <!-- Profile button with dropdown menu -->
-    <div class="relative">
-    <button class="text-[#333333] font-semibold bg-transparent px-1 py-1 border-[1.5px] border-[#333333] hover:border-green-700 rounded-full hover:text-green-700 transition-all duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-        </button>
+
+        <!-- Navigation and Buttons Wrapper -->
+        <div class="flex items-center justify-center w-full">
+            <!-- Navigation - Desktop -->
+            <nav class="hidden lg:block">
+                <ul class="flex space-x-8">
+                    <li><a href="/" class="text-[#333333] font-semibold inline-flex items-center gap-1 hover:text-green-700 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        Home</a>
+                    </li>
+                    <li><a href="/shop" class="text-[#333333] font-semibold inline-flex items-center gap-1 hover:text-green-700 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-store"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/></svg>
+                        Shop</a>
+                    </li>
+                    <li><a href="/products" class="text-[#333333] font-semibold inline-flex items-center gap-1 hover:text-green-700 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-basket"><path d="m15 11-1 9"/><path d="m19 11-4-7"/><path d="M2 11h20"/><path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"/><path d="M4.5 15.5h15"/><path d="m5 11 4-7"/><path d="m9 11 1 9"/></svg>
+                        Products</a>
+                    </li>
+                    <li><a href="/about" class="text-[#333333] font-semibold inline-flex items-center gap-1 hover:text-green-700 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                        About Us</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <!-- Cart button with index -->
-        <div class="relative">
-    <a href="{% url 'cart-items' %}">
-        <button id="cartButton" class="text-[#333333] font-semibold bg-transparent px-1 py-1 border-[1.5px] rounded-full border-[#333333] hover:border-green-700 hover:text-green-700 transition-all duration-300">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-    </button>
-</a>
-</div>
-</div>
-    </header>
+
+        <!-- Buttons -->
+        <div class="flex items-center gap-4">
+            <!-- Profile button with dropdown menu -->
+            <div class="relative">
+                <button class="text-[#333333] font-semibold bg-transparent px-1 py-1 border-[1.5px] border-[#333333] hover:border-green-700 rounded-full hover:text-green-700 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+                </button>
+            </div>
+
+            <!-- Cart button with index -->
+            <div class="relative">
+                <a href="{% url 'cart-items' %}">
+                    <button id="cartButton" class="text-[#333333] font-semibold bg-transparent px-1 py-1 border-[1.5px] rounded-full border-[#333333] hover:border-green-700 hover:text-green-700 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                    </button>
+                </a>
+            </div>
+        
+        </div>
+    </div>
+</header>
     
+
             
 <!-- Main content of the page -->
-<div class="bg-gradient-to-b from-green-50 to-green-50">
-    <section class="py-10 sm:py-16 lg:py-24">
+<div class="relative bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/2171077/pexels-photo-2171077.jpeg');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    
+    <!-- Content Section -->
+    <section class="relative py-10 sm:py-10 lg:py-5">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-                <div class="relative">
-                    <h1 class="text-4xl font-bold mb-8 text-[#333333] sm:text-6xl lg:text-7xl">Project Overview</h1>
+                <div class="relative text-white">
                     <div class="relative inline-flex items-center">
-                        <span class="absolute inset-x-0 bottom-0 border-b-[30px] border-green-700/[.5]"></span>
-                        <h2 class="text-4xl font-bold text-black sm:text-6xl lg:text-7xl">Fresh Food</h2>
+                        <span class="absolute inset-x-0 bottom-0 border-b-[60px] border-green-700/[.7]"></span>
+                        <h1 class="relative text-4xl font-bold sm:text-10xl lg:text-7xl">Fresh Pick</h1>
                     </div>
-                    <p class="mt-8 text-base text-black sm:text-xl">Fresh Pick is a user-friendly web application designed to streamline your grocery shopping experience. Select and purchase fresh fruits and vegetables online, then pick them up at your convenience.</p>
-                </div>
-                        <img class="w-full rounded-lg" src="https://images.pexels.com/photos/7129126/pexels-photo-7129126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-                    </div>
-            
-                    </div>
-                </div>
-
-                <div class="bg-grey-50">
-                    <section class="py-10 sm:py-16 lg:py-24">
-                        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                            <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-                                <div>
-                                    <h2 class="text-4xl font-bold text-[#333333] sm:text-6xl lg:text-7xl">About the Developers</h2>
-                                    <p class="mt-4 text-base text-gray-600 sm:text-xl">Hi, we are three passionate software engineering students with a keen interest in web development. We created Fresh Pick to solve the problem of inconvenient grocery shopping and to learn more about full-stack development. Through this project, we enhanced our skills in Django, MySQL, and responsive design.</p>
-                                </div>
-                                <div class="relative bg-green-100 p-20 rounded-lg shadow-lg">
-                                    <div class="absolute top-0 left-0 bg-grey-100 border-t-2 border-l-2 border-grey-200 w-8 h-8 transform -translate-x-5 -translate-y-5 rotate-45"></div>
-                                    <div class="post-it-content">
-                                        <p><a href="https://yourwebsite.com" target="_blank" class="text-4xl text-gray-800 font-semibold hover:underline">Your Website</a></p>
-                                        <p><a href="https://github.com/yourusername" target="_blank" class="text-4xl text-gray-800 font-semibold hover:underline">GitHub</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <p class="mt-8 text-base sm:text-xl">Fresh Pick is a user-friendly web application designed to streamline your grocery shopping experience. Select and purchase fresh fruits and vegetables online, then pick them up at your convenience.</p>
+                
+                    <!-- Call to action button -->
+                    <div class="mt-10">
+            <a href="https://fresh-pick.vercel.app/">
+                <button class="text-white font-semibold bg-green-500 px-4 py-2 rounded-lg hover:bg-green-700 transition-all duration-300">
+                    View Live App
+                </button>
+                </a>
+            </div>
                 </div>
                 
-               
-                
+                <img class="rounded-lg max-w-[200] max-h-[200]" src="https://images.pexels.com/photos/7129126/pexels-photo-7129126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Fresh Food" />
+            </div>
         </div>
     </section>
 </div>
+
+<!-- Features Section -->
+
+<div class="bg-gradient-to-b from-green-50 to-yellow-100">
+    <section class="py-10 bg-green-700/[.1] sm:py-16 lg:py-24 mt-5">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-bold leading-tight text-gray-800 sm:text-4xl lg:text-5xl">Features</h2>
+            </div>
+    
+            <div class="grid max-w-xl grid-cols-1 mx-auto mt-8 text-center lg:max-w-full sm:mt-12 lg:mt-20 lg:grid-cols-3 gap-x-6 xl:gap-x-12 gap-y-6">
+                <div class="overflow-hidden bg-white rounded-md shadow">
+                    <div class="px-8 py-12">
+                        
+                            <div class="rounded-full bg-gray-200 mb-4">
+                            <img class="relative object-cover mx-auto rounded-full" src="https://images.pexels.com/photos/7125733/pexels-photo-7125733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold mb-2">Freshness Guarantee</h3>
+                        <blockquote class="mt-5">
+                            <p class="text-lg text-gray-700">
+                                We ensure that every piece of produce delivered to your doorstep is farm-fresh and handpicked to meet our highest quality standards. If it's not fresh, it's free.</p>
+
+                        </blockquote>
+                    </div>
+                </div>
+    
+                <div class="overflow-hidden bg-white rounded-md shadow">
+                    <div class="px-8 py-12">
+                        <div class="rounded-full bg-gray-200 mb-4">
+                            <img class="relative object-cover mx-auto rounded-full" src="https://images.pexels.com/photos/9811474/pexels-photo-9811474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">Wide Variety of Products</h3>
+                        <blockquote class="mt-7">
+                            <p class="text-lg text-gray-700">
+                                Choose from an extensive selection of fruits, vegetables, and organic produce. Whether you're looking for seasonal specials or everyday staples, we've got you covered.</p>
+                    
+                        </blockquote>
+                    </div>
+                </div>
+    
+                <div class="overflow-hidden bg-white rounded-md shadow">
+                    <div class="px-8 py-12">
+                        <div class="rounded-full bg-gray-200 mb-4">
+                            <img class="relative object-cover w-70 h-30mx-auto rounded-full" src="https://images.pexels.com/photos/7262877/pexels-photo-7262877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">Time-Saving</h3>
+                        <blockquote class="mt-7">
+                            <p class="text-lg text-gray-700">
+                                We save you time by gathering all the fresh products you need, ready for pickup at your convenience.
+                            </p>
+                        </blockquote>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+<!-- About the Developers Section -->
+<div class="bg-grey-50 py-10 sm:py-16 lg:py-24">
+    <div class="px-4 mx-auto max-w-7xl flex flex-col lg:flex-row items-center sm:px-6 lg:px-8">
+    
+        <div class="max-w-3xl mx-auto text-center lg:text-left">
+            <h2 class="text-3xl font-bold leading-tight text-gray-800 sm:text-4xl lg:text-5xl">About the Developers</h2>
+            <p class="mt-6 text-lg text-gray-700">
+                Hi, we are three passionate software engineering students with a keen interest in web development. The inspiration for Fresh Pick came from our shared frustration with the challenges of grocery shopping, especially during busy times and in the midst of the COVID-19 pandemic. We realized that many people, including ourselves, faced difficulties finding fresh, high-quality produce without the hassle of crowded stores and long lines.
+            </p>
+            <p class="mt-4 text-lg text-gray-700">
+                Our journey began during a casual conversation where we shared our experiences and discussed potential solutions. This led us to the idea of creating a platform that ensures convenient access to farm-fresh produce, delivered right to your doorstep or ready for easy pickup. We wanted to make grocery shopping a seamless and enjoyable experience for everyone.
+            </p>
+            <p class="mt-4 text-lg text-gray-700">
+                Fresh Pick is not just a project for us; it's a culmination of our learning and growth as software engineers. This project allowed us to dive deep into full-stack development, honing our skills in Django, MySQL, and responsive design. It challenged us to think creatively and work collaboratively, pushing the boundaries of our technical abilities.
+            </p>
+            <p class="mt-4 text-lg text-gray-700">
+                This project is also part of our portfolio for Holberton School, where we have been trained to become proficient and adaptive software engineers. You can learn more about Holberton School and their innovative approach to software engineering education <a href="https://www.holbertonschool.com" class="text-green-600 hover:underline">here</a>.
+            </p>
+            <p class="mt-4 text-lg text-gray-700">
+                We are excited to share Fresh Pick with you and hope it makes your grocery shopping experience more convenient and enjoyable. Thank you for supporting our journey!
+            </p>
+        </div>
+        <div class="relative bg-green-100 p-8 lg:p-20 rounded-lg shadow-lg mr-8">
+            <div class="absolute top-0 left-0 bg-gray-100 border-t-4 border-l-4 border-gray-200 w-10 h-10 transform -translate-x-3 -translate-y-3 rotate-45"></div>
+            <div class="post-it-content">
+                
+                <h3 class="text-xl font-semibold mb-4">Team Github</h3>
+                <p><span class="inline-block w-1 h-1 bg-black rounded-full mr-3"></span><a href="https://github.com/Clear008" target="_blank" class="text-lg text-gray-800 font-semibold hover:underline">Wissal Leknouch</a></p>
+                <p><span class="inline-block w-1 h-1 bg-black rounded-full mr-3"></span><a href="https://github.com/khalilelamraoui" target="_blank" class="text-lg text-gray-800 font-semibold hover:underline">Khalil Elamraoui</a></p>
+                <p><span class="inline-block w-1 h-1 bg-black rounded-full mr-3"></span><a href="https://github.com/SoufianeMouajjeh" target="_blank" class="text-lg text-gray-800 font-semibold hover:underline">Soufiane Mouajjeh</a></p>
+                
+                <p>
+                    <i class="fas fa-arrow-right text-black mr-5"></i>
+                    <a href="https://github.com/khalilelamraoui/Fresh-pick" target="_blank" class="text-lg text-green-800 font-semibold hover:underline">Github Repository</a>
+                </p>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
 
 
  
